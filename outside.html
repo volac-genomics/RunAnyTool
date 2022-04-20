@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <meta name="author" content="Amy J Baldwin">
+  <link rel="canonical" href="https://volac-genomics.github.io/RunAnyTool/outside.html">
+  <link rel="shortcut icon" href="img/favicon.ico">
+  <title>Method 1 - Run 'any' Tool</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
+
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Method 1";
+    var mkdocs_page_input_path = "outside.md";
+    var mkdocs_page_url = "/RunAnyTool/outside.html";
+  </script>
+  
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+        <a href="index.html" class="icon icon-home"> Run 'any' Tool</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="index.html">Introduction</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="quick.html">Quick start</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="access.html">Accessing the server</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="fetch.html">Setting up a new Tool</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Running a Tool</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="outside.html">Method 1</a>
+    <ul class="current">
+    </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="inside.html">Method 2</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="clear.html">Removing old Tools</a>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="troubleshooting.html">Troubleshooting</a>
+                    </li>
+                </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">Run 'any' Tool</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Running a Tool &raquo;</li>
+        
+      
+    
+    <li>Method 1</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/volac-genomics/RunAnyTool/edit/master/docs/outside.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  
+  <hr/>
+</div>
+
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="running-software-in-a-container">Running software in a container</h2>
+<p>Once you have transferred a container image to your system you can use the enclosed software.</p>
+<p>The following command will make a container from the image file (<code>.sif</code>), run the software, and then collapse the container. The output from the software will be save in your current directory, unless specified otherwise.</p>
+<pre><code>singularity exec CONTAINER_NAME.sif YOUR_SCRIPT_HERE
+</code></pre>
+<p>The first part of the command <code>singularity exec CONTAINER_NAME.sif</code> specifies information about the container; the second part of the command (<code>YOUR_SCRIPT_HERE</code>) relates to the command you want the software inside the container to execute.</p>
+<p>Substitute:</p>
+<ul>
+<li><code>CONTAINER_NAME</code> for the name of the container you wish to use, and </li>
+<li><code>YOUR_SCRIPT_HERE</code> for the full command to execute the tool. </li>
+</ul>
+
+<div class="admonition example">
+<p class="admonition-title">Example</p>
+<p>This exec command allows you to execute a custom command (<code>cowsay moo</code>) within a container by specifying the image file (<code>lolcow_latest.sif</code>):</p>
+<p><code>singularity exec lolcow_latest.sif cowsay moo</code></p>
+<p>The following command executes <code>shovill --check</code> inside a container named <code>shovill_latest.sif</code>. </p>
+<p><code>singularity exec shovill_latest.sif shovill --check</code></p>
+</div>
+<div class="admonition information">
+<p class="admonition-title">Information</p>
+<p>By default, Singularity automatically connects folders outside and inside the container; this means you can easily process data saved on your system and save the results. Your outputs are not lost when the container is collapsed. </p>
+</div>
+<hr />
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="inside.html" class="btn btn-neutral float-right" title="Method 2">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="fetch.html" class="btn btn-neutral" title="Setting up a new Tool"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+        <span>
+          <a href="https://github.com/volac-genomics/RunAnyTool/" class="fa fa-github" style="color: #fcfcfc"> GitHub</a>
+        </span>
+    
+    
+      <span><a href="fetch.html" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="inside.html" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="js/theme_extra.js" defer></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>
